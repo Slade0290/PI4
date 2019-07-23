@@ -1,0 +1,14 @@
+Regle du jeu : 
+-Il s'agit d'un Jeu qui interagit avec la camera. Il faudra jouer avec un objet
+rouge, dans un endroit lumineux afin de bien detecter la couleur rouge.
+-A chaque instant, les figures tomberont et vous devez garder les figures
+à conserver, et ejecter ceux qui ne correspondent pas.
+
+Point de vie : 
+-Chaque niveau fait gagner au joueur un point de vie, et une mauvaise
+combinaison ou rejet, fera perdre au joueur 1 point de vie.
+
+Score : 
+-Chaque figure ejectée fait gagner au joueur un point de score.
+-A la fin de la partie, le joueur peut enregistrer son nom et son score 
+si son score est dans le top10. 

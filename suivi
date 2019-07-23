@@ -1,0 +1,54 @@
+02/02/2018:
+Il faut se mettre d'accord au sujet de la vitesse: constante ou pas ? (le texte est contradictoire). Par ailleurs il me semble que si on pousse un objet, la vitesse n'a pas forcément tendance à diminuer.
+Phrase pas claire dans "Les points de vie".
+"Rôle" n'a rien à faire dans le cahier des charges, mais il serait bon de spécifier ce qu'est le "reste".
+
+Diagramme de classes: ça a l'air bien.
+
+Quid de l'idée d'avoir 2 joueurs? (Ce qui donne plus de sens au côté réalité augmentée)
+
+09/02/2018:
+Cahier des charges bien (encore des pb de rédaction dans la rubrique "Les points de vie").
+Diagramme de classes: vous avez intégré me semble-t-il la rotation des figures quand elles se prennent un choc, mais cela n
+apparaît pas dans le diagramme de classes.
+
+16/02/2018:
+Sauf erreur de ma part, rien n'a été rendu.
+
+23/02/2018:
+régler le problème des figures qui se collent
+regarder ce qui existe dans l'api java pour s'en servir si besoin
+
+02/03/2018:
+les pb de la semaine dernières semblent régler
+
+09/03/2018:
+Il faut mettre le répertoire Image/ et son contenu sur le svn. L'affichage est bizarre chez moi, mais cela peut être dû à l'absence du fichier figure.jpg. Après le menu je n'ai plus rien.
+Pourquoi est-ce la classe Fenetre1 qui met en place les actions liées à la classe Accueil et pas la classe Accueil elle-même? Et de même pour les autres (par exemple Selection1). Règle à suivre: dans la mesure du possible chaque classe s'occupe de ses affaires.
+
+16/03/2018:
+Il y a un mélange entre ce qui fonctionne et ce qui ne fonctionne pas. Tout n'est pas dans le package adéquat: je perds un quart d'heure avant de pouvoir lancer le projet, puis je me rends compte qu'il manque le bon constructeur dans GameFenetre. Et ça ne compile pas (méthode exit() inconnue pour ActionListener).
+
+
+23/03/2018:
+Je ne peux pas compiler: pb constructeur GameFenetre.
+
+à faire: terminer ménage; readme avec détails pour opencv; mettre ensemble les deux parties
+
+30/03/2018:
+Dans Jeu.dessineFigureAConserver(...): c'est quoi ce switch? Au minimum, il faut tirer une couleur au hasard et ensuite ajouer la figure avec la couleur. Et c'est de toutes façons beaucoup mieux de ranger les couleurs dans un tableau et d'aller y chercher une case au hasard. Ce tableau pourrait être une variable globale qui servirait aussi dans Jeu.ajouteFigure(...). Le mieux serait d'utiliser le design pattern Fabrique.
+
+Dans Figure: en général equals s'écrit comme une redéfinition de la méthode Object.equals(). Et de toutes façons il faut déléguer ça aux sous-classes: ça évite d'avoir à faire des tests de types sur l'objet courant.
+Figure.enCollision(...): vous ne semblez pas avoir compris l'intérêt du polymorphisme. Il n'y a pas besoin de tester si f est un cercle ou un polygone pour invoquer enCollision: f le sait lui-même.
+
+Dans Polygon: pourquoi estConvexe est static et prend un argument?
+
+Pourquoi addLeger apparaît dans TestMoteur et dans Jeu (et ce n'est pas la seule méthode)
+
+06/04/2018:
+Dans Accueil, vous faites appel à un constructeur de ScorePanel qui n'existe pas.
+Par ailleurs à l'exécution j'ai un NullPointerException.
+
+13/04/2018:
+La gestion de la sérialisation est mal faite: je ne peux pas exécuter sans modifier le consructeur de AdapteScore.
+Ce n'est pas très fonctionnel. Par ailleurs, je m'attendrais à ce qu'une pièce envoyée vers le haut retombe sans disparaître. Et les vitesses de retombée des objets ne sont pas réalistes par rapport au mouvement de la main.
